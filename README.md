@@ -21,7 +21,7 @@ The final internship project from SENLA
 ## Setup
 
 1. Install Docker and Docker compose on Windows of Linux: ``https://habr.com/ru/companies/vdsina/articles/496804/``
-2. Copy project from GitHub: ``git clone git@github.com:nast9ln/senla-labs.git``
+2. Copy project from GitHub: ``git clone git@github.com:nast9ln/advertisement-system.git``
 3. Go to the project folder: ``cd senla-labs``
 4. Run docker compose file: ``docker-compose up -d``
 5. Use postman to check functionality
