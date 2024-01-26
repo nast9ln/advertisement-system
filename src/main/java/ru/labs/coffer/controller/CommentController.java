@@ -15,6 +15,7 @@ public interface CommentController {
 
     @Operation(summary = "Удаление комментария")
     ResponseEntity<Void> delete(Long id);
+
     @Operation(summary = "Получение всех комментариев к объявлению")
     ResponseEntity<Page<CommentDto>> findAllByAdvertisementId(Long id, Pageable pageable);
 }

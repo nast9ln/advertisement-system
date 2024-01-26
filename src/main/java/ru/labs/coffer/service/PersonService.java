@@ -1,8 +1,5 @@
 package ru.labs.coffer.service;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import ru.labs.coffer.dto.AdvertisementDto;
 import ru.labs.coffer.dto.PersonDto;
 import ru.labs.coffer.dto.RoleDto;
 import ru.labs.coffer.entity.Person;

@@ -6,7 +6,6 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import ru.labs.coffer.entity.Advertisement;
 import ru.labs.coffer.entity.Message;
 import ru.labs.coffer.entity.Person;
 

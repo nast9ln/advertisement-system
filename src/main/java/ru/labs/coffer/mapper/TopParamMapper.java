@@ -7,6 +7,7 @@ import ru.labs.coffer.entity.TopParam;
 @Mapper(componentModel = "spring")
 public interface TopParamMapper {
     TopParam toEntity(TopParamDto dto);
+
     TopParamDto toDto(TopParam entity);
 
     @Mapping(target = "id", ignore = true)

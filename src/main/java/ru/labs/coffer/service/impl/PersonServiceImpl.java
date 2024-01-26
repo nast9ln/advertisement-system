@@ -1,14 +1,10 @@
 package ru.labs.coffer.service.impl;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.labs.coffer.dto.AdvertisementDto;
 import ru.labs.coffer.dto.PersonDto;
 import ru.labs.coffer.dto.RoleDto;
 import ru.labs.coffer.dto.security.JwtPerson;
@@ -16,10 +12,8 @@ import ru.labs.coffer.entity.Person;
 import ru.labs.coffer.entity.Role;
 import ru.labs.coffer.exception.EntityNotFoundException;
 import ru.labs.coffer.exception.RelativeNotFoundException;
-import ru.labs.coffer.mapper.AdvertisementMapper;
 import ru.labs.coffer.mapper.PersonMapper;
 import ru.labs.coffer.mapper.RoleMapper;
-import ru.labs.coffer.repository.AdvertisementRepository;
 import ru.labs.coffer.repository.MessageRepository;
 import ru.labs.coffer.repository.PersonRepository;
 import ru.labs.coffer.service.AdvertisementService;

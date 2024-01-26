@@ -3,7 +3,6 @@ package ru.labs.coffer.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
 import ru.labs.coffer.dto.security.AuthenticationRequest;
 import ru.labs.coffer.dto.security.AuthenticationResponse;
 import ru.labs.coffer.dto.security.JwtPerson;

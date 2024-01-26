@@ -5,21 +5,17 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.labs.coffer.dto.TopParamDto;
-import ru.labs.coffer.entity.AbstractEntity;
 import ru.labs.coffer.entity.Advertisement;
 import ru.labs.coffer.entity.TopParam;
 import ru.labs.coffer.exception.EntityNotFoundException;
 import ru.labs.coffer.mapper.TopParamMapper;
 import ru.labs.coffer.repository.AdvertisementRepository;
-import ru.labs.coffer.repository.PersonRepository;
 import ru.labs.coffer.repository.TopParamRepository;
 import ru.labs.coffer.service.TopParamService;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor

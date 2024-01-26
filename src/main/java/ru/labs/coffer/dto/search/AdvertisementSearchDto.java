@@ -1,7 +1,6 @@
 package ru.labs.coffer.dto.search;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Data

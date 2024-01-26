@@ -6,13 +6,8 @@ import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 import ru.labs.coffer.dto.AdvertisementDto;
-import ru.labs.coffer.dto.CategoryDto;
-import ru.labs.coffer.dto.PageInfo;
 import ru.labs.coffer.dto.search.AdvertisementSearchDto;
-
-import java.util.List;
 
 @Tag(name = "Контроллер объявления")
 public interface AdvertisementController {

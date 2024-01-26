@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import ru.labs.coffer.dto.AdvertisementDto;
 import ru.labs.coffer.dto.CategoryDto;
-import ru.labs.coffer.dto.PersonDto;
 import ru.labs.coffer.dto.TopParamDto;
 import ru.labs.coffer.dto.search.AdvertisementSearchDto;
 import ru.labs.coffer.dto.security.JwtPerson;

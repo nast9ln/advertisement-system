@@ -2,11 +2,8 @@ package ru.labs.coffer.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.PrePersist;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-
-import java.time.Instant;
 
 @Getter
 @Setter

@@ -1,14 +1,13 @@
 package ru.labs.coffer.mapper;
 
 import org.mapstruct.*;
-import org.mapstruct.control.MappingControl;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import ru.labs.coffer.dto.PersonDto;
 import ru.labs.coffer.entity.Person;
 
 @Mapper
 public interface PersonMapper {
     Person toEntity(PersonDto dto);
+
     PersonDto toDto(Person entity);
 
     @Mapping(target = "id", ignore = true)

@@ -10,6 +10,7 @@ import ru.labs.coffer.service.TopParamService;
 @RequiredArgsConstructor
 public class SchedulingServiceImpl implements SchedulingService {
     private final TopParamService topParamService;
+
     @Override
     @Scheduled(fixedRate = 60000)
     public void updateIsTopStatus() {

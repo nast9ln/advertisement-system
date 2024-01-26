@@ -11,7 +11,6 @@ import ru.labs.coffer.dto.security.JwtPerson;
 import ru.labs.coffer.entity.Person;
 import ru.labs.coffer.entity.Role;
 import ru.labs.coffer.enums.RoleEnum;
-import ru.labs.coffer.exception.BaseException;
 import ru.labs.coffer.exception.EntityNotFoundException;
 import ru.labs.coffer.exception.LoginDuplicateException;
 import ru.labs.coffer.mapper.JwtPersonMapper;

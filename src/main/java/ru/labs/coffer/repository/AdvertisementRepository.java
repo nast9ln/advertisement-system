@@ -17,6 +17,7 @@ import java.util.Optional;
 public interface AdvertisementRepository extends JpaRepository<Advertisement, Long>,
         PagingAndSortingRepository<Advertisement, Long> {
     List<Advertisement> findByPersonId(Long id);
+
     Page<Advertisement> findByPersonId(Long id, Pageable pageable);
 
     @Query(value = "SELECT * FROM Advertisement WHERE person_id = :id", nativeQuery = true)
