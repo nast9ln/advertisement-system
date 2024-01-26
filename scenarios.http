@@ -1,0 +1,297 @@
+### User Scenarios
+
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{
+  "login": "nast9ln",
+  "password": "test"
+}
+
+### Authorization**
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "login": "nast9ln",
+  "password": "test"
+}
+
+
+### Viewing an account mapper
+GET http://localhost:8080/person/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXN0OWxuIiwiaWF0IjoxNzA2MjIwNTczLCJleHAiOjE3MDYzNjQ1NzMsImlkIjoxMSwibG9naW4iOiJuYXN0OWxuIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.Pg4lDK3MkJn6nqtJCinbruAhdOMQxotKl0lEZE0dwAs
+
+### Editing an account mapper
+PUT http://localhost:8080/person
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXN0OWxuIiwiaWF0IjoxNzA2MjIwNTczLCJleHAiOjE3MDYzNjQ1NzMsImlkIjoxMSwibG9naW4iOiJuYXN0OWxuIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.Pg4lDK3MkJn6nqtJCinbruAhdOMQxotKl0lEZE0dwAs
+
+{
+  "firstName": "Nastya",
+  "gender": "WOMAN"
+}
+
+
+### View all ads sorted by date mapper
+POST http://localhost:8080/advertisement/search
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXN0OWxuIiwiaWF0IjoxNzA2MjIwNTczLCJleHAiOjE3MDYzNjQ1NzMsImlkIjoxMSwibG9naW4iOiJuYXN0OWxuIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.Pg4lDK3MkJn6nqtJCinbruAhdOMQxotKl0lEZE0dwAs
+
+{
+  "pageInfo": {
+    "page": 0,
+    "size": 20,
+    "sort": [
+      {
+        "field": "createdDate",
+        "direction": "DESC"
+      }
+    ]
+  }
+}
+
+### View all ads sorted by top and date mapper
+POST http://localhost:8080/advertisement/search
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXN0OWxuIiwiaWF0IjoxNzA2MjIwNTczLCJleHAiOjE3MDYzNjQ1NzMsImlkIjoxMSwibG9naW4iOiJuYXN0OWxuIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.Pg4lDK3MkJn6nqtJCinbruAhdOMQxotKl0lEZE0dwAs
+
+{
+  "pageInfo": {
+    "page": 0,
+    "size": 20,
+    "sort": [
+      {
+        "field": "topParam.timeTopStart",
+        "direction": "ASC"
+      },
+      {
+        "field": "createdDate",
+        "direction": "DESC"
+      }
+    ]
+  }
+}
+
+
+### View all ads sorted by creator rating and date mapper
+POST http://localhost:8080/advertisement/search
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXN0OWxuIiwiaWF0IjoxNzA2MjIwNTczLCJleHAiOjE3MDYzNjQ1NzMsImlkIjoxMSwibG9naW4iOiJuYXN0OWxuIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.Pg4lDK3MkJn6nqtJCinbruAhdOMQxotKl0lEZE0dwAs
+
+{
+  "pageInfo": {
+    "page": 0,
+    "size": 20,
+    "sort": [
+      {
+        "field": "person.rating",
+        "direction": "DESC"
+      },
+      {
+        "field": "createdDate",
+        "direction": "DESC"
+      }
+    ]
+  }
+}
+
+###View all ads in a given price range and sorted by top and date mapper
+POST http://localhost:8080/advertisement/search
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXN0OWxuIiwiaWF0IjoxNzA2MjIwNTczLCJleHAiOjE3MDYzNjQ1NzMsImlkIjoxMSwibG9naW4iOiJuYXN0OWxuIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.Pg4lDK3MkJn6nqtJCinbruAhdOMQxotKl0lEZE0dwAs
+
+{
+  "minCost": 100,
+  "maxCost": 350,
+  "pageInfo": {
+    "page": 0,
+    "size": 20,
+    "sort": [
+      {
+        "field": "topParam.timeTopStart",
+        "direction": "ASC"
+      },
+      {
+        "field": "createdDate",
+        "direction": "DESC"
+      }
+    ]
+  }
+}
+
+
+### View all ads with a cost less than the specified one mapper
+POST http://localhost:8080/advertisement/search
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXN0OWxuIiwiaWF0IjoxNzA2MjIwNTczLCJleHAiOjE3MDYzNjQ1NzMsImlkIjoxMSwibG9naW4iOiJuYXN0OWxuIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.Pg4lDK3MkJn6nqtJCinbruAhdOMQxotKl0lEZE0dwAs
+
+{
+  "maxCost": 120,
+  "pageInfo": {
+    "page": 0,
+    "size": 20,
+    "sort": [
+      {
+        "field": "topParam.timeTopStart",
+        "direction": "ASC"
+      },
+      {
+        "field": "createdDate",
+        "direction": "DESC"
+      }
+    ]
+  }
+}
+
+
+### Create an ad mapper
+POST http://localhost:8080/advertisement
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXN0OWxuIiwiaWF0IjoxNzA2MjIwNTczLCJleHAiOjE3MDYzNjQ1NzMsImlkIjoxMSwibG9naW4iOiJuYXN0OWxuIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.Pg4lDK3MkJn6nqtJCinbruAhdOMQxotKl0lEZE0dwAs
+
+{
+  "person": {
+  },
+  "category": {
+    "id": 2
+  },
+  "topParam": {
+    "timeInTop": 100
+  },
+  "cost": 80,
+  "city": "Los Angeles",
+  "header": "Leather Jacket",
+  "description": "Vintage leather jacket for sale",
+  "status": "Active"
+}
+
+
+### Edit an ad mapper
+PUT http://localhost:8080/advertisement
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXN0OWxuIiwiaWF0IjoxNzA2MjIwNTczLCJleHAiOjE3MDYzNjQ1NzMsImlkIjoxMSwibG9naW4iOiJuYXN0OWxuIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.Pg4lDK3MkJn6nqtJCinbruAhdOMQxotKl0lEZE0dwAs
+
+{
+  "id": 11,
+  "cost": 8000,
+  "city": "Los Angeles Test",
+  "status": "Active"
+}
+
+
+### Authorization**
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "login": "Sophia",
+  "password": "test"
+}
+
+
+###Get a list of people who wrote about the ad mapper
+GET http://localhost:8080/message/creator
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTc1MzAsImV4cCI6MTcwNjQwMTUzMCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.JU4OApc8w3Yq1k9z2Ak6X1pd6WZTrHwlBF5yOjo2oOs
+
+
+### Send a message by creator mapper
+POST http://localhost:8080/message
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTcwMTgsImV4cCI6MTcwNjQwMTAxOCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.8eOKMUx8brMx7QPAc7PDqo3gnNPyjIQnybfHCWhIAFw
+
+{
+  "recipient": 1,
+  "advertisementId": 4,
+  "text": "hi",
+  "created_date": "2023-09-22T14:00:00Z",
+  "isDeleted": false
+}
+
+### Get a dialogue with a specific person by creator mapper
+GET http://localhost:8080/message/by-creator/4/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTcwMTgsImV4cCI6MTcwNjQwMTAxOCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.8eOKMUx8brMx7QPAc7PDqo3gnNPyjIQnybfHCWhIAFw
+
+
+### Delete an ad mapper
+DELETE http://localhost:8080/advertisement/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTcwMTgsImV4cCI6MTcwNjQwMTAxOCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.8eOKMUx8brMx7QPAc7PDqo3gnNPyjIQnybfHCWhIAFw
+
+
+### View the ad mapper
+GET http://localhost:8080/advertisement/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTcwMTgsImV4cCI6MTcwNjQwMTAxOCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.8eOKMUx8brMx7QPAc7PDqo3gnNPyjIQnybfHCWhIAFw
+
+
+### Leave a comment on the ad mapper
+POST http://localhost:8080/comment
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTcwMTgsImV4cCI6MTcwNjQwMTAxOCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.8eOKMUx8brMx7QPAc7PDqo3gnNPyjIQnybfHCWhIAFw
+
+{
+  "advertisementId": 5,
+  "text": "dgdgdg"
+}
+
+
+### Write about the adv mapper
+POST http://localhost:8080/message
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTcwMTgsImV4cCI6MTcwNjQwMTAxOCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.8eOKMUx8brMx7QPAc7PDqo3gnNPyjIQnybfHCWhIAFw
+
+{
+  "advertisementId": 5,
+  "text": ":("
+}
+
+
+### Rate the interlocutor mapper
+
+PUT http://localhost:8080/person/rate
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTcwMTgsImV4cCI6MTcwNjQwMTAxOCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.8eOKMUx8brMx7QPAc7PDqo3gnNPyjIQnybfHCWhIAFw
+
+{
+  "personId": 5,
+  "score": 3
+}
+
+
+### View a person's sales history mapper
+GET http://localhost:8080/advertisement/history/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTcwMTgsImV4cCI6MTcwNjQwMTAxOCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.8eOKMUx8brMx7QPAc7PDqo3gnNPyjIQnybfHCWhIAFw
+
+
+### Admin Scenarios
+
+### Change the user's role mapper
+PUT http://localhost:8080/admin/persons/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTcwMTgsImV4cCI6MTcwNjQwMTAxOCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.8eOKMUx8brMx7QPAc7PDqo3gnNPyjIQnybfHCWhIAFw
+
+    [
+      {
+        "id": 1
+      }
+    ]
+
+
+### Add an ad to the top mapper
+POST http://localhost:8080/admin/top/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTcwMTgsImV4cCI6MTcwNjQwMTAxOCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.8eOKMUx8brMx7QPAc7PDqo3gnNPyjIQnybfHCWhIAFw
+
+{
+  "timeTopStart": "2024-01-25T21:29:09.196+00:00",
+  "timeInTop": 10000
+}
+
+
+### Delete an ad mapper
+DELETE http://localhost:8080/admin/adv/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTcwMTgsImV4cCI6MTcwNjQwMTAxOCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.8eOKMUx8brMx7QPAc7PDqo3gnNPyjIQnybfHCWhIAFw
+
+
+### Delete a comment mapper
+DELETE http://localhost:8080/admin/comment/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTb3BoaWEiLCJpYXQiOjE3MDYyNTcwMTgsImV4cCI6MTcwNjQwMTAxOCwiaWQiOjQsImxvZ2luIjoiU29waGlhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XX0.8eOKMUx8brMx7QPAc7PDqo3gnNPyjIQnybfHCWhIAFw
